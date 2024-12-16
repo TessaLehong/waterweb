@@ -1,0 +1,493 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 98%;
+    height: 40px;
+    background: rgba(0, 102, 204, 0.9);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #66ccff;
+}
+
+/* Burger Menu for Mobile */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger span {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 102, 204, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7);
+}
+
+.hero-content {
+    z-index: 1;
+    animation: fadeIn 3s ease-in-out;
+}
+
+
+
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #0066cc;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  background: linear-gradient(to bottom, #007bff, #f0f8ff);
+  color: white;
+}
+.about-text {
+  max-width: 50%;
+  padding: 20px;
+  animation: fadeInLeft 2s ease-in-out;
+}
+.about-text h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.about-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+.about-text ul {
+  list-style: none;
+  padding: 0;
+}
+.about-text ul li {
+  margin: 10px 0;
+  position: relative;
+  padding-left: 20px;
+}
+.about-text ul li::before {
+  content: '✓';
+  color: #32cd32;
+  position: absolute;
+  left: 0;
+  font-size: 1.2em;
+}
+.about-image {
+  max-width: 40%;
+  animation: fadeInRight 7s ease-in-out;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Shop Section */
+
+
+.shop h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #0066cc;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.product-card p {
+    margin: 5px 0;
+    color: #333;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    color: #0066cc;
+    margin: 10px 0;
+}
+
+.product-card .add-to-cart {
+    background: #0066cc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+    background: #005bb5;
+}
+
+/* Cart */
+.cart {
+    margin-top: 50px;
+    text-align: left;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 50px auto 0;
+}
+
+.cart h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.cart .total {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.cart .checkout {
+    background: #0066cc;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.cart .checkout:hover {
+    background: #005bb5;
+}
+
+
+/* Main Contact Section */
+/* Contact Section styling */
+.contact-section {
+    height: 100vh; /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('—Pngtree—spray_401480.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  /* Overlay for darker effect */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 84%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+  }
+  
+  /* Heading styles */
+  .heading {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  /* Description paragraph */
+  .description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 400px;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* General input styling */
+  .input-field, .message-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Message text area */
+  .message-field {
+    height: 120px;
+    resize: none;
+  }
+  
+  /* Submit button */
+  .submit-btn {
+    background-color: #d4b17d;
+    color: black;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #b29362;
+  }
+  
+  
+  /* --- Responsive adjustments for smaller screens --- */
+  
+  @media screen and (max-width: 768px) {
+    .overlay {
+      padding: 20px; /* Reduce padding for smaller screens */
+      align-items: center; /* Center elements on smaller screens */
+      justify-content: center;
+    }
+  
+    .heading {
+      font-size: 2rem; /* Reduce font size for smaller screens */
+      text-align: center;
+    }
+  
+    .description {
+      font-size: 1rem; /* Reduce font size */
+      margin-bottom: 20px;
+      text-align: center; /* Center the description */
+    }
+  
+    .contact-form {
+      width: 100%; /* Make the form take full width */
+    }
+  
+    .name-fields {
+      flex-direction: column; /* Stack the name fields vertically */
+      gap: 10px; /* Reduce gap between inputs */
+    }
+  
+    .contact-fields {
+      flex-direction: column; /* Stack the contact fields vertically */
+      gap: 10px;
+    }
+  
+    .input-field, .email-field, .message-field {
+      width: 100%; /* Ensure inputs take full width */
+      font-size: 1rem; /* Adjust font size */
+    }
+  
+    .submit-btn {
+      width: 100%; /* Ensure the button takes full width */
+      padding: 10px;
+      font-size: 1rem;
+    }
+  }
+  .contact-info {
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Center vertically */
+    right: 100px; /* Align to the right */
+    transform: translateY(-40%); /* Adjust to perfectly center */
+    color: #d4b17d; /* Change to the color you prefer */
+    text-align: right; /* Align text to the right */
+    font-size: 2rem;
+  }
+  
+  .contact-info a {
+    color: #d4b17d; /* Link color */
+    text-decoration: underline; /* Underline links */
+    font-size: 2rem;
+  }
+  
+  .contact-info p {
+    margin: 5px 0; /* Space between paragraphs */
+  }
+  /* Responsive adjustments for very small screens */
+  @media (max-width: 768px) {
+    .contact-section {
+      position: relative;
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      margin-top: 40px; /* Ensures there's space between the previous section */
+      clear: both; /* Prevents overlap from previous elements */
+      z-index: 0; /* Ensures the form does not overlap with other sections */
+    }
+    /* Ensure other sections don't overlap */
+    .contact-section + .another-section {
+      margin-top: 0;
+      padding-top: 10px; /* Adjust as needed to create a visual separation */
+    }
+  
+  }
+    /* Ensure form or contact elements stack properly */
+    .contact-form {
+      display: flex;
+      flex-direction: column; /* Stack form inputs vertically */
+      gap: 10px; /* Space between form elements */
+    }
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

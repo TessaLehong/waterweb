@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Bottles Shop</title>
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">Water Bottles Shop</div>
+    </header>
+
+    <main>
+        <section class="shop">
+            <h2>Available Bottles</h2>
+            <div class="products">
+                <!-- Individual bottle card -->
+                <div class="product-card">
+                    <img src="—Pngtree—plastic water bottle full of_13245605.png" alt="5L Bottle">
+                    <h3>500ml Bottle</h3>
+                    <p class="price">R5.00</p>
+                    <label for="quantity1">Quantity:</label>
+                    <input type="number" id="quantity1" min="1" value="1">
+                    <button class="add-to-cart" onclick="addToCart('5L Bottle', 5, 'quantity1')">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="empty-water-bottle.jpg" alt="2L Bottle">
+                    <h3>1L Bottle</h3>
+                    <p class="price">R15.00</p>
+                    <label for="quantity2">Quantity:</label>
+                    <input type="number" id="quantity2" min="1" value="1">
+                    <button class="add-to-cart" onclick="addToCart('2L Bottle', 3, 'quantity2')">Add to Cart</button>
+                </div>
+                <div class="product-card">
+                  <img src="Screenshot 2024-12-10 202441.png" alt="5L Bottle">
+                  <h3>1,5L Bottle</h3>
+                  <p class="price">R17.00</p>
+                  <label for="quantity1">Quantity:</label>
+                  <input type="number" id="quantity1" min="1" value="1">
+                  <button class="add-to-cart" onclick="addToCart('5L Bottle', 5, 'quantity1')">Add to Cart</button>
+              </div>
+              <div class="product-card">
+                <img src="Screenshot 2024-12-13 164416.png" alt="5L Bottle">
+                <h3>2L Bottle</h3>
+                <p class="price">R21.00</p>
+                <label for="quantity1">Quantity:</label>
+                <input type="number" id="quantity1" min="1" value="1">
+                <button class="add-to-cart" onclick="addToCart('5L Bottle', 5, 'quantity1')">Add to Cart</button>
+            </div>
+            <div class="product-card">
+              <img src="Screenshot 2024-12-10 203326.png" alt="5L Bottle">
+              <h3>5L Bottle</h3>
+              <p class="price">R30.00</p>
+              <label for="quantity1">Quantity:</label>
+              <input type="number" id="quantity1" min="1" value="1">
+              <button class="add-to-cart" onclick="addToCart('5L Bottle', 5, 'quantity1')">Add to Cart</button>
+          </div>
+          <div class="product-card">
+            <img src="Screenshot 2024-12-10 203251.png" alt="5L Bottle">
+            <h3>10L Bottle</h3>
+            <p class="price">R55.00</p>
+            <label for="quantity1">Quantity:</label>
+            <input type="number" id="quantity1" min="1" value="1">
+            <button class="add-to-cart" onclick="addToCart('5L Bottle', 5, 'quantity1')">Add to Cart</button>
+        </div>
+            </div>
+        </section>
+
+        <!-- Cart Modal -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('cart-modal')">×</button>
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p class="total">Total: R<span id="total-price">0.00</span></p>
+        <button class="checkout-btn" onclick="openModal('checkout-modal')">Checkout</button>
+    </div>
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkout-modal" class="modal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('checkout-modal')">×</button>
+        <h2>Checkout</h2>
+        <form id="checkout-form" onsubmit="completePurchase(event)">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+            <label for="card">Card Number:</label>
+            <input type="text" id="card" maxlength="16" required>
+            <label for="expiry">Expiry Date:</label>
+            <input type="month" id="expiry" required>
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" maxlength="3" required>
+            <button type="submit">Complete Purchase</button>
+        </form>
+    </div>
+</div>
+    </main>
+
+    <script src="shop.js"></script>
+</body>
+</html>
